@@ -108,16 +108,6 @@ def getCert(client, domain):
     fullchain_pem = perform_http01(client, challb, orderr)
     return pkey_pem, fullchain_pem
 
-
-print("My ssl module")
-_client = createAccount("R0b", "https://acme-v02.api.letsencrypt.org/directory", "151093rb@gmail.com")
-pkey, full = getCert(_client, "r0b.dynu.net")
-filePath = os.path.dirname(os.path.realpath(__file__))
-with open("{0}/../Data/ssl_cert/cert.pem".format(filePath), "w") as stream:
-    stream.write(full)
-with open("{0}/../Data/ssl_cert/p_key.key".format(filePath), "wb") as stream:
-    stream.write(pkey)
-
 print("Get ssl.\n")
 client = createAccount("username", "https://acme-v02.api.letsencrypt.org/directory", "email@domain.com")
 privateKey, fullChainKey = getCert(client, "yourDomain.com")
