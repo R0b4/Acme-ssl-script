@@ -1,4 +1,4 @@
-print("\nAAA\n")
+#Based on https://github.com/certbot/certbot/blob/master/acme/examples/http01_example.py
 
 from contextlib import contextmanager
 
